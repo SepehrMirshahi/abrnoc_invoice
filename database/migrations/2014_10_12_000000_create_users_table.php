@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('password');
-            $table->bigInteger('credit');
+            $table->bigInteger('credit')->default(0);
+            $table->timestamps();
         });
     }
 
