@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained();
             $table->bigInteger('price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
