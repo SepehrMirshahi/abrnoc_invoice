@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -20,3 +21,4 @@ Route::post('/signup', [UserController::class, 'signup']);
 Route::post('/addcredit', [UserController::class, 'addCredit']);
 Route::post('/subscribe', [SubscriptionController::class, 'store']);
 Route::post('/unsubscribe/{subscription}', [SubscriptionController::class, 'unsubscribe']);
+Route::post('/report', [ReportController::class, 'invoiceReport']);

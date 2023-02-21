@@ -14,10 +14,10 @@ class Subscription extends Model
     ];
 
     public function user(){
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function invoice(){
-        $this->hasMany(Invoice::class);
+    public function invoices(){
+        return $this->hasMany(Invoice::class);
     }
 }
