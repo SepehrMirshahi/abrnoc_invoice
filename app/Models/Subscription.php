@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subscription extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name', 'price', 'user_id'
@@ -15,9 +16,5 @@ class Subscription extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
-    }
-
-    public function invoices(){
-        return $this->hasMany(Invoice::class);
     }
 }
